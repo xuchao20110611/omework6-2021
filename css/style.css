@@ -1,0 +1,113 @@
+body{
+    font-family: Alegreya Sans SC,sans-serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+
+}
+
+header{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card>header{
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0 20px 0;
+    border-radius: 7px 7px 0 0;
+}
+
+.pricing{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 450px;
+}
+
+.gallery{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px 10px 10px 10px;
+    width: 300px;
+
+}
+
+
+@keyframes logoani {
+    0%{width: 50px; opacity: 0;}
+    100%{width:425px; opacity: 1;}
+}
+#logo{
+    animation: logoani 5s;
+}
+
+
+@media screen and (min-width: 850px) {
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content : space-between;
+    }
+    body>header{
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .nav_links{
+        flex-direction: row;
+
+    }
+    .card{
+        flex-basis: 250px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+}
+
+@media print{
+    body{
+        background-image: none;
+    }
+    .nav_links{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pricing{
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+    .card{
+        border: 2px solid #45ADDD;
+        flex-basis: 250px;
+    }
+    .gallery,#gallery{
+        display: none;
+    }
+}
